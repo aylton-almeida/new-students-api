@@ -1,6 +1,6 @@
 # Gerência de Configuração e Evolução de Software
 
-Esse é o código atualizado para a Students API.
+Esse é o código para a Students API.
 
 ## Tecnologias
 
