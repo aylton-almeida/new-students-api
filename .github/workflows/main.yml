@@ -1,0 +1,16 @@
+name: New Students Api Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    name: "Hello World"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello World"
+      - name: Say Goodbye
+        run: echo "Goodbye"
