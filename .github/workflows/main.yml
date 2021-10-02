@@ -14,3 +14,12 @@ jobs:
         run: echo "Hello World"
       - name: Say Goodbye
         run: echo "Goodbye"
+      - name: Print Node Version
+        run: node --version
+
+  # test:
+  #   name: "Test our API"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Run Tests
+  #       run: npm run test
