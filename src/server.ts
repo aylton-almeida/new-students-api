@@ -5,6 +5,6 @@ import routes from "./routes";
 
 const app = express();
 
-app.use(cors(), express.json(), routes, errors);
+app.use(cors(), express.json(), routes, errors());
 
 export default app;

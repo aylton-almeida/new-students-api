@@ -33,8 +33,13 @@ const getStudents = () => Promise.resolve(Object.freeze([...students]));
 const updateStudent = (id: number, student: Student) => {
   const index = students.findIndex((s) => s.id === id);
   students[index] = { ...students[index], ...student };
-  console.log(students);
   return Promise.resolve();
 };
 
-export { addStudent, getStudents, updateStudent };
+const deleteStudent = (id: number) => {
+  const index = students.findIndex((s) => s.id === id);
+  students.splice(index, 1);
+  return Promise.resolve();
+};
+
+export { addStudent, getStudents, updateStudent, deleteStudent };

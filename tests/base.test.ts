@@ -6,6 +6,6 @@ describe("Test base requests", () => {
     await supertest(app)
       .get("/ping")
       .expect(200)
-      .then((res) => expect(res.body).toBe("pong"));
+      .then((res) => expect(res.body).toBe("Hello World"));
   });
 });
