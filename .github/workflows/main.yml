@@ -1,9 +1,6 @@
 name: New Students Api Pipeline
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   hello:
