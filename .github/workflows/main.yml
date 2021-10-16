@@ -3,24 +3,23 @@ name: New Students Api Pipeline
 on: [push]
 
 jobs:
-  hello:
-    name: "Show our code"
+  build:
+    name: "Build our code"
     runs-on: ubuntu-latest
-    env:
-      NAME: ${{secrets.NAME}}
-      WORLD: "Earth"
     steps:
       - uses: actions/checkout@v2
-      - name: Show the directory
-        run: ls
-      - name: Show the index.ts
-        run: cat index.ts
-      - name: Say hello
-        run: echo "Hello $NAME and $WORLD"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
 
-  # test:
-  #   name: "Test our API"
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Run Tests
-  #       run: npm run test
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build app
+        run: npm run build
+
+      - name: Show the built app
+        run: ls dist
