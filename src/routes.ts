@@ -1,7 +1,7 @@
 import { celebrate, Joi } from "celebrate";
 import express from "express";
 import { StudentsController } from "./controllers/studentController";
-import { StudentSchema, UpdateStudentSchema } from "./types/Student";
+import { StudentSchema, UpdateStudentSchema } from "./entities/Student";
 
 const routes = express.Router();
 

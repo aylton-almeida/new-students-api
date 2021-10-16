@@ -1,11 +1,30 @@
 import { Joi } from "celebrate";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
-export interface Student {
+@Entity()
+export class Student {
+  @PrimaryGeneratedColumn()
   id?: number;
+
+  @Column()
   name: string;
+
+  @Column()
   birth: Date;
+
+  @Column()
   email: string;
+
+  @Column()
   city: string;
+
+  constructor(data?: Record<string, any>) {
+    this.id = data?.id;
+    this.name = data?.name;
+    this.birth = data?.birth;
+    this.email = data?.email;
+    this.city = data?.city;
+  }
 }
 
 export const StudentSchema = {
